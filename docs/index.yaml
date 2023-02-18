@@ -1,0 +1,436 @@
+openapi: '3.0.0'
+info:
+  version: '1.0.0'
+  title: 'Bike Shop REST API'
+  description: View and manage your bike sales system
+
+paths:
+  /bikes:
+    get:
+      summary: Get the list of bikes
+      parameters:
+      - name: search
+        in: query
+        required: false
+        description: >
+          Optionally provide this query parameter to retrive bikes that match the
+          search value
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/bikes"
+    post:
+      summary: Create a new bike record
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/bikeInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/bike"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  /bikes/{id}:
+    get:
+      summary: Retrieve a specific bike
+      parameters:
+      - $ref: "#/components/parameters/idParam"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/bike"
+        "404":
+          description: Not Found
+    put:
+      summary: Update a bike's details
+      parameters:
+      - $ref: "#/components/parameters/idParam"
+      requestBody:
+        required: true
+        description: "Provide at least one of the fields"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/bikeInput"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/bike"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+        "404":
+          description: Not Found
+  /customers:
+    get:
+      summary: Get the list of customers
+      parameters:
+        - name: email
+          in: query
+          required: false
+          description: >
+            Optionally provide this query parameter to search customers by their
+            email address
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/customers"
+    post:
+      summary: Create a new customer record
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/customerInput"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/customer"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  /customers/{id}:
+    get:
+      summary: Get a specific customer's record
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/customer"
+        "404":
+          description: Not Found
+  /sales:
+    get:
+      summary: Get the list of sales
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/sales"
+    post:
+      summary: Create a new sale record
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bikes:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: ID of the bike
+                    unitsSold:
+                      type: integer
+                customerId:
+                  type: integer
+                paymentMethod:
+                  type: string
+                  enum:
+                    - cash
+                    - credit/debit
+                date:
+                  type: string
+                  description: Date of sale
+                discountPercentage:
+                  type: integer
+                  description: Discount applied to the entire sale
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/sale"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+  /sales/{id}:
+    get:
+      summary: Retrieve a specific sale record
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/sale"
+        "404":
+          description: Not Found
+    put:
+      summary: Modify a sale record
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      requestBody:
+        description: Provide at least one of the fields
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                discountPercentage:
+                  type: integer
+                  description: Discount applied to the entire sale
+                refund:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        description: ID of the bike
+                      unitsRefunded:
+                        type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/sale"
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/error"
+        "404":
+          description: Not Found
+    delete:
+      summary: Delete a sale record
+      parameters:
+        - $ref: "#/components/parameters/idParam"
+      responses:
+        "204":
+          description: No Content
+        "404":
+          description: Not Found
+  /analytics/topSellingBikes:
+    get:
+      summary: Retrieve the list of top selling bikes in a specified time range
+      parameters:
+        - name: timeRange
+          in: query
+          description: Time range dating back from the current date
+          required: true
+          schema:
+            type: string
+            enum: 
+              - 7d
+              - 30d
+              - 3m
+              - 6m
+              - 1y
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalBikesSold:
+                    type: integer
+                    description: >
+                      Total number of bikes sold in the given time range
+                  bikes:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        bike:
+                          $ref: "#/components/schemas/bike"
+                        unitsSold:
+                          type: integer
+                        totalSales:
+                          type: number
+
+components:
+  schemas:
+    bikes:
+      type: array
+      items:
+        $ref: "#/components/schemas/bike"
+    bike:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        model:
+          type: string
+        price:
+          type: number
+        unitsAvailable:
+          type: integer
+        description:
+          type: string
+        image:
+          type: string
+    bikeInput:
+      type: object
+      properties:
+        name:
+          type: string
+        model:
+          type: string
+        price:
+          type: number
+        unitsAvailable:
+          type: integer
+        description:
+          type: string
+        image:
+          type: string
+    customers:
+      type: array
+      items:
+        $ref: "#/components/schemas/customer"
+    customer:
+      type: object
+      properties:
+        id:
+          type: integer
+        email:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+    customerInput:
+      type: object
+      properties:
+        email:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+    sales:
+      type: array
+      items:
+        $ref: "#/components/schemas/sale"
+    sale:
+      type: object
+      properties:
+        netSale:
+          type: number
+          description: Total value of the sale after deducting any applied discount
+        discountPercentage:
+          type: integer
+          description: Discount applied to the entire sale
+        soldAt:
+          type: string
+          description: Date of sale
+        updatedAt:
+          type: string
+          description: Latest date of sale modification
+        customer:
+          $ref: "#/components/schemas/customer"
+        bikes:
+          type: array
+          items:
+            type: object
+            properties:
+              bike:
+                $ref: "#/components/schemas/bike"
+              unitsSold:
+                type: integer
+              unitsRefunded:
+                type: integer
+              price:
+                type: number
+                description: Price at which the bike was sold at
+    saleInput:
+      type: object
+      properties:
+        bikes:
+          type: object
+          properties:
+            id:
+              type: integer
+              description: ID of the bike
+            unitsSold:
+              type: integer
+        customerId:
+          type: integer
+        paymentMethod:
+          type: string
+          enum:
+            - cash
+            - credit/debit
+        date:
+          type: string
+          description: Date of sale
+        discountPercentage:
+          type: integer
+          description: Discount applied to the entire sale
+    error:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+  parameters:
+    idParam:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+
