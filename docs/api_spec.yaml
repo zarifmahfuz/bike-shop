@@ -13,8 +13,8 @@ paths:
         in: query
         required: false
         description: >
-          Optionally provide this query parameter to retrive bikes that match the
-          search value
+          Optionally provide this query parameter to search for specific bikes by their
+          name or model
         schema:
           type: string
       responses:
@@ -25,7 +25,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/bikes"
     post:
-      summary: Create a new bike record
+      summary: Add a new bike
       requestBody:
         required: true
         content:
@@ -59,7 +59,7 @@ paths:
                 $ref: "#/components/schemas/bike"
         "404":
           description: Not Found
-    put:
+    patch:
       summary: Update a bike's details
       parameters:
       - $ref: "#/components/parameters/idParam"
@@ -424,6 +424,11 @@ components:
           items:
             type: object
             properties:
+              type:
+                type: string
+                enum:
+                  - SaleCreationError
+                  - Other
               message:
                 type: string
   parameters:
