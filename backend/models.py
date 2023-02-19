@@ -29,16 +29,16 @@ class Sale(models.Model):
     sold_at = models.DateField()
     updated_at = models.DateField(auto_now=True)
     payment_method = models.CharField(max_length=50, choices=PAYMENT_CHOICES)
+    net_sale = models.DecimalField(max_digits=8, decimal_places=2)
+    discount_percentage = models.IntegerField(default=0, blank=True, validators=[
+        MinValueValidator(0), MaxValueValidator(100)
+    ])
 
 
 class BikeSale(models.Model):
     sale = models.ForeignKey(Sale, on_delete=models.PROTECT)
     bike = models.ForeignKey(Bike, on_delete=models.PROTECT)
-    units = models.PositiveIntegerField(default=1)
-    net_sale = models.DecimalField(
-        "net_sale = sale value - discount applied", max_digits=8, decimal_places=2)
-    refund = models.DecimalField(
-        max_digits=8, decimal_places=2, default=0, blank=True)
-    discount_percentage = models.IntegerField(default=0, blank=True, validators=[
-        MinValueValidator(0), MaxValueValidator(100)
-    ])
+    units_sold = models.PositiveIntegerField(default=1)
+    units_refunded = models.PositiveIntegerField(default=0, blank=True)
+    price = models.DecimalField(
+        "Price at which the bike was sold at", max_digits=7, decimal_places=2)
