@@ -12,6 +12,9 @@ class Bike(models.Model):
     image = models.URLField(blank=True)
     objects = managers.BikeManager()
 
+    def __str__(self):
+        return f"{self.name} - {self.model}"
+
 
 class Customer(models.Model):
     email = models.EmailField(unique=True)
@@ -33,10 +36,12 @@ class Sale(models.Model):
     discount_percentage = models.IntegerField(default=0, blank=True, validators=[
         MinValueValidator(0), MaxValueValidator(100)
     ])
+    objects = managers.SaleManager()
 
 
 class BikeSale(models.Model):
-    sale = models.ForeignKey(Sale, on_delete=models.PROTECT)
+    sale = models.ForeignKey(Sale, related_name="bikes",
+                             on_delete=models.PROTECT)
     bike = models.ForeignKey(Bike, on_delete=models.PROTECT)
     units_sold = models.PositiveIntegerField(default=1)
     units_refunded = models.PositiveIntegerField(default=0, blank=True)

@@ -1,9 +1,9 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status, viewsets
+from rest_framework import status
 from django.shortcuts import get_object_or_404
 from . import serializers
-from .models import Bike, Customer
+from .models import Bike, Customer, Sale
 
 
 class BikesView(APIView):
@@ -60,3 +60,29 @@ class CustomerView(APIView):
         customer = get_object_or_404(Customer, pk=id)
         serializer = serializers.CustomerSerializer(customer)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+class SalesView(APIView):
+    def get(self, request):
+        serializer = serializers.SaleSerializer(Sale.objects.all(), many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request):
+        serializer = serializers.CreateSaleSerializer(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            sale = serializer.save()
+            serializer = serializers.SaleSerializer(sale)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class SaleView(APIView):
+    def get(self, request, id):
+        sale = get_object_or_404(Sale, pk=id)
+        serializer = serializers.SaleSerializer(sale)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def patch(self, request, id):
+        pass
+
+    def delete(self, request, id):
+        pass
