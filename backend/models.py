@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+from . import managers
 
 
 class Bike(models.Model):
@@ -8,13 +9,15 @@ class Bike(models.Model):
     price = models.DecimalField(max_digits=7, decimal_places=2)
     units_available = models.PositiveIntegerField(default=0)
     description = models.TextField(blank=True)
-    image = models.ImageField(null=True, blank=True)
+    image = models.URLField(blank=True)
+    objects = managers.BikeManager()
 
 
 class Customer(models.Model):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
+    objects = managers.CustomerManager()
 
 
 class Sale(models.Model):
