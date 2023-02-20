@@ -151,6 +151,9 @@ paths:
                 $ref: "#/components/schemas/sales"
     post:
       summary: Create a new sale record
+      description: >
+        Creating a new sale will automatically update the inventory of the bikes
+        associated with the sale
       requestBody:
         required: true
         content:
@@ -159,13 +162,15 @@ paths:
               type: object
               properties:
                 bikes:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                      description: ID of the bike
-                    unitsSold:
-                      type: integer
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        description: ID of the bike
+                      unitsSold:
+                        type: integer
                 customerId:
                   type: integer
                 paymentMethod:
@@ -206,7 +211,7 @@ paths:
                 $ref: "#/components/schemas/sale"
         "404":
           description: Not Found
-    put:
+    patch:
       summary: Modify a sale record
       parameters:
         - $ref: "#/components/parameters/idParam"
@@ -231,6 +236,7 @@ paths:
                         description: ID of the bike
                       unitsRefunded:
                         type: integer
+                        description: Total units refunded
       responses:
         "200":
           description: OK
@@ -248,6 +254,9 @@ paths:
           description: Not Found
     delete:
       summary: Delete a sale record
+      description: >
+        Deleting a sale will automatically update the inventory of bikes 
+        associated with the sale
       parameters:
         - $ref: "#/components/parameters/idParam"
       responses:
@@ -364,9 +373,13 @@ components:
     sale:
       type: object
       properties:
+        id:
+          type: integer
+        totalSale:
+          type: number
         netSale:
           type: number
-          description: Total value of the sale after deducting any applied discount
+          description: Net value of the sale after deducting any applied discount
         discountPercentage:
           type: integer
           description: Discount applied to the entire sale
@@ -428,6 +441,7 @@ components:
                 type: string
                 enum:
                   - SaleCreationError
+                  - RefundError
                   - Other
               message:
                 type: string
