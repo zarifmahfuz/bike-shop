@@ -1,4 +1,5 @@
 from rest_framework import serializers
+import decimal
 from . import models
 
 
@@ -17,6 +18,11 @@ class CustomerSerializer(serializers.ModelSerializer):
 class CreateBikeSaleSerializer(serializers.Serializer):
     id = serializers.IntegerField(required=True)
     units_sold = serializers.IntegerField(min_value=0, required=True)
+
+
+class RefundBikeSaleSerializer(serializers.Serializer):
+    id = serializers.IntegerField(required=True)
+    units_refunded = serializers.IntegerField(min_value=1, required=True)
 
 
 class BikeSaleSerializer(serializers.ModelSerializer):
@@ -41,11 +47,29 @@ class CreateSaleSerializer(serializers.ModelSerializer):
         return models.Sale.objects.create(validated_data)
 
 
+class UpdateSaleSerializer(serializers.ModelSerializer):
+    refund = RefundBikeSaleSerializer(many=True, required=False)
+
+    class Meta:
+        model = models.Sale
+        fields = ["discount_percentage", "refund"]
+
+    def update(self, instance, validated_data):
+        instance.update(validated_data)
+        return instance
+
+
 class SaleSerializer(serializers.ModelSerializer):
     bikes = BikeSaleSerializer(many=True)
     customer = CustomerSerializer()
 
     class Meta:
         model = models.Sale
-        fields = ["id", "net_sale", "discount_percentage",
+        fields = ["id", "total_sale", "discount_percentage",
                   "sold_at", "updated_at", "customer", "bikes"]
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data["net_sale"] = round(instance.total_sale - decimal.Decimal(
+            instance.discount_percentage / 100) * instance.total_sale, 2)
+        return data

@@ -7,3 +7,11 @@ class NotEnoughBikeUnitsAvailable(APIException):
 
     def __init__(self, detail=None, code=None):
         super().__init__(detail=detail, code=code)
+
+
+class RefundError(APIException):
+    status_code = 400
+    default_code = 'refund_error'
+
+    def __init__(self, detail=None, code=None):
+        super().__init__(detail=detail, code=code)

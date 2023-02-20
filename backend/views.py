@@ -82,7 +82,14 @@ class SaleView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def patch(self, request, id):
-        pass
+        sale = get_object_or_404(Sale, pk=id)
+        serializer = serializers.UpdateSaleSerializer(sale, data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            sale = serializer.save()
+            serializer = serializers.SaleSerializer(sale)
+            return Response(serializer.data, status=status.HTTP_200_OK)
 
     def delete(self, request, id):
-        pass
+        sale = get_object_or_404(Sale, pk=id)
+        sale.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

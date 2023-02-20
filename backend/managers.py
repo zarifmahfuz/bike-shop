@@ -30,13 +30,11 @@ class SaleManager(django_models.Manager):
                 raise NotEnoughBikeUnitsAvailable(detail=message)
             total_sale += bike_object.price * bike["units_sold"]
             bikes.append((bike_object, bike["units_sold"]))
+
         customer = get_object_or_404(
             models.Customer, pk=serializer_data["customer_id"])
-        net_sale = total_sale - \
-            decimal.Decimal(
-                (serializer_data["discount_percentage"] / 100)) * total_sale
         sale = models.Sale(customer=customer, sold_at=serializer_data["date"], payment_method=serializer_data["payment_method"],
-                           net_sale=net_sale, discount_percentage=serializer_data["discount_percentage"])
+                           total_sale=round(total_sale, 2), discount_percentage=serializer_data["discount_percentage"])
         sale.save()
         for bike, units_sold in bikes:
             bike.units_available -= units_sold
