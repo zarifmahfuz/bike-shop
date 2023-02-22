@@ -1,0 +1,62 @@
+[
+{
+    "model": "backend.bike",
+    "pk": 1,
+    "fields": {
+        "name": "Trek Verve",
+        "model": "Trek Verve 2",
+        "price": "699.99",
+        "units_available": 3,
+        "description": "A versatile bike designed for comfort and ease of use. Ideal for casual rides and fitness.",
+        "image": "https://trek.scene7.com/is/image/TrekBicycleProducts/Verve2Disc_21_32735_A_Portrait?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440"
+    }
+},
+{
+    "model": "backend.bike",
+    "pk": 2,
+    "fields": {
+        "name": "Specialized Rockhopper",
+        "model": "Expert 29",
+        "price": "1400.00",
+        "units_available": 5,
+        "description": "A hardtail mountain bike built to conquer technical terrain with speed and confidence.",
+        "image": "https://assets.specialized.com/i/specialized/91520-33_ROCKHOPPER-EXPERT-29-OAKGRNMET-METWHTSIL_HERO?bg=rgb(241,241,241)&w=2500&h=1406&fmt=auto"
+    }
+},
+{
+    "model": "backend.bike",
+    "pk": 3,
+    "fields": {
+        "name": "Cannondale Synapse",
+        "model": "Carbon Disc 105",
+        "price": "2600.00",
+        "units_available": 4,
+        "description": "A high-performance road bike that offers a smooth and comfortable ride.",
+        "image": "https://embed.widencdn.net/img/dorelrl/uqie9ib7os/1100px@1x/C21_C12501M_Synapse_105_BPL_PD.webp?color=f2eff7&q=99"
+    }
+},
+{
+    "model": "backend.bike",
+    "pk": 4,
+    "fields": {
+        "name": "Trek Domane",
+        "model": "Trek Domane AL 2",
+        "price": "1019.99",
+        "units_available": 10,
+        "description": "A lightweight and responsive road bike designed for speed and performance.",
+        "image": "https://trek.scene7.com/is/image/TrekBicycleProducts/DomaneAL2_21_33037_A_Portrait?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440"
+    }
+},
+{
+    "model": "backend.bike",
+    "pk": 5,
+    "fields": {
+        "name": "Giant Talon",
+        "model": "Giant Talon 3",
+        "price": "600.00",
+        "units_available": 10,
+        "description": "A budget-friendly mountain bike with a lightweight frame and front suspension for a smooth ride.",
+        "image": "https://images2.giant-bicycles.com/b_white,e_trim,q_90,w_2000/r46bcbj9ogzm7g9qbod8/MY22Talon293_ColorBAmberGlow.jpg"
+    }
+}
+]
