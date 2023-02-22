@@ -171,8 +171,8 @@ paths:
                         description: ID of the bike
                       unitsSold:
                         type: integer
-                customerId:
-                  type: integer
+                customer:
+                  $ref: "#/components/schemas/customerInput"
                 paymentMethod:
                   type: string
                   enum:
