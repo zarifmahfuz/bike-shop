@@ -2,6 +2,7 @@ aniso8601==9.0.1
 asgiref==3.6.0
 autopep8==2.0.1
 Django==4.1.7
+django-cors-headers==3.13.0
 djangorestframework==3.14.0
 djangorestframework-camel-case==1.4.2
 graphene==3.2.1
