@@ -31,8 +31,8 @@ class SaleManager(django_models.Manager):
             total_sale += bike_object.price * bike["units_sold"]
             bikes.append((bike_object, bike["units_sold"]))
 
-        customer = get_object_or_404(
-            models.Customer, pk=serializer_data["customer_id"])
+        customer = models.Customer.objects.get_or_create(
+            email=serializer_data["customer"]["email"], defaults=serializer_data["customer"])[0]
         sale = models.Sale(customer=customer, sold_at=serializer_data["date"], payment_method=serializer_data["payment_method"],
                            total_sale=round(total_sale, 2), discount_percentage=serializer_data["discount_percentage"])
         sale.save()

@@ -5,8 +5,6 @@ from ..models import Bike, Customer, Sale
 
 class SalesTestCase(APITestCase):
     def test_create_sale(self):
-        customer = Customer.objects.create(
-            first_name="Michael", last_name="Bisping", email="bisping@gmail.com")
         bike_1 = Bike.objects.create(
             name="Trek Marlin", model="Trek Marlin 6", price=1049.99, units_available=2)
         bike_2 = Bike.objects.create(
@@ -22,7 +20,11 @@ class SalesTestCase(APITestCase):
                     "unitsSold": 1
                 }
             ],
-            "customerId": customer.id,
+            "customer": {
+                "email": "bisping@gmail.com",
+                "firstName": "Michael",
+                "lastName": "Bisping"
+            },
             "paymentMethod": "credit/debit",
             "date": "2023-02-19",
             "discountPercentage": 0
@@ -40,7 +42,8 @@ class SalesTestCase(APITestCase):
         for expected_bike_sale_key in ["bike", "units_sold", "units_refunded", "price"]:
             self.assertTrue(
                 expected_bike_sale_key in response.data["bikes"][0])
-        self.assertEqual(customer.id, response.data["customer"]["id"])
+        self.assertEqual("bisping@gmail.com",
+                         response.data["customer"]["email"])
 
         # test the model data
         bike_1.refresh_from_db()
@@ -49,8 +52,6 @@ class SalesTestCase(APITestCase):
         self.assertEqual(1, bike_2.units_available)
 
     def test_create_sale_with_insufficient_stock(self):
-        customer = Customer.objects.create(
-            first_name="Michael", last_name="Bisping", email="bisping@gmail.com")
         bike = Bike.objects.create(
             name="Trek Marlin", model="Trek Marlin 6", price=1049.99, units_available=2)
         payload = {
@@ -60,7 +61,11 @@ class SalesTestCase(APITestCase):
                     "unitsSold": 3
                 }
             ],
-            "customerId": customer.id,
+            "customer": {
+                "email": "bisping@gmail.com",
+                "firstName": "Michael",
+                "lastName": "Bisping"
+            },
             "paymentMethod": "credit/debit",
             "date": "2023-02-19",
             "discountPercentage": 0
@@ -76,8 +81,6 @@ class SalesTestCase(APITestCase):
                          response.data["error"][0]["message"])
 
     def test_create_sale_with_discount(self):
-        customer = Customer.objects.create(
-            first_name="Michael", last_name="Bisping", email="bisping@gmail.com")
         bike_1 = Bike.objects.create(
             name="Trek Marlin", model="Trek Marlin 6", price=1049.99, units_available=2)
         bike_2 = Bike.objects.create(
@@ -93,7 +96,11 @@ class SalesTestCase(APITestCase):
                     "unitsSold": 1
                 }
             ],
-            "customerId": customer.id,
+            "customer": {
+                "email": "bisping@gmail.com",
+                "firstName": "Michael",
+                "lastName": "Bisping"
+            },
             "paymentMethod": "credit/debit",
             "date": "2023-02-19",
             "discountPercentage": 10
@@ -232,7 +239,11 @@ class SalesTestCase(APITestCase):
                     "unitsSold": units_sold
                 },
             ],
-            "customerId": customer.id,
+            "customer": {
+                "email": customer.email,
+                "firstName": customer.first_name,
+                "lastName": customer.last_name
+            },
             "paymentMethod": "credit/debit",
             "date": "2023-02-19",
             "discountPercentage": discount_percentage

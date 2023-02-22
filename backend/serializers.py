@@ -10,6 +10,8 @@ class BikeSerializer(serializers.ModelSerializer):
 
 
 class CustomerSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField()
+
     class Meta:
         model = models.Customer
         fields = "__all__"
@@ -35,12 +37,12 @@ class BikeSaleSerializer(serializers.ModelSerializer):
 
 class CreateSaleSerializer(serializers.ModelSerializer):
     bikes = CreateBikeSaleSerializer(many=True)
-    customer_id = serializers.IntegerField(required=True)
+    customer = CustomerSerializer(required=True)
     date = serializers.DateField(required=True)
 
     class Meta:
         model = models.Sale
-        fields = ["bikes", "customer_id",
+        fields = ["bikes", "customer",
                   "discount_percentage", "payment_method", "date"]
 
     def create(self, validated_data):
