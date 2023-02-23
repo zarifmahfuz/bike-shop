@@ -16,7 +16,6 @@ import { Bike } from '../../models/bike';
 
 export default function BikeDetails() {
   const bike = useLoaderData() as Bike;
-  console.log('Bike', bike);
   const navigate = useNavigate();
   return (
     <div>

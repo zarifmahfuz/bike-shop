@@ -285,5 +285,5 @@ export const createSaleAction = async ({ request }) => {
   if (!res.ok) {
     return { error: resData.error[0].message };
   }
-  return redirect('/sales');
+  return redirect(`/sales/${resData.id}`);
 };

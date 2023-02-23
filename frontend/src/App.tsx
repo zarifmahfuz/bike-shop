@@ -13,6 +13,7 @@ import EditBike, { editBikeAction } from './pages/bikes/EditBike';
 import Dashboard from './pages/Dashboard';
 import Sales from './pages/Sales';
 import CreateSale, { createSaleAction } from './pages/sales/CreateSale';
+import SaleDetails, { saleDetailsLoader } from './pages/sales/SaleDetails';
 
 // router and routes
 const router = createBrowserRouter(
@@ -37,6 +38,7 @@ const router = createBrowserRouter(
       <Route path="sales">
         <Route index element={<Sales />} />
         <Route path="new" element={<CreateSale />} action={createSaleAction} />
+        <Route path=":id" element={<SaleDetails />} loader={saleDetailsLoader} />
       </Route>
     </Route>,
   ),
