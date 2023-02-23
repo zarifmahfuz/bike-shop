@@ -24,13 +24,13 @@ export default function ErrorBanner({ error }: RequestError) {
         <AlertTitle>Error</AlertTitle>
         <AlertDescription>{error}</AlertDescription>
       </Box>
-      <CloseButton
+      {/* <CloseButton
         alignSelf="flex-start"
         position="relative"
         right={-1}
         top={-1}
         onClick={onClose}
-      />
+      /> */}
     </Alert>
   );
 }

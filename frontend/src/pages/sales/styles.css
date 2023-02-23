@@ -1,0 +1,17 @@
+.sales-summary {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background-color: rgb(133, 200, 148);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  
+  .sales-summary hr {
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+  }
+  
