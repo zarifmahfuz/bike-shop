@@ -1,10 +1,11 @@
-import { AddIcon, EditIcon, SearchIcon } from '@chakra-ui/icons';
+import '../styles.css';
+
+import { AddIcon, SearchIcon } from '@chakra-ui/icons';
 import {
   Box,
   Button,
   Card,
   CardBody,
-  CardFooter,
   CardHeader,
   Container,
   Divider,
@@ -74,7 +75,7 @@ export default function Bikes() {
           />
         </InputGroup>
         <Button
-          colorScheme="green"
+          bg="#85C894"
           leftIcon={<AddIcon />}
           onClick={() => navigate('/bikes/new')}
         >
@@ -84,7 +85,12 @@ export default function Bikes() {
       <SimpleGrid spacing={10} minChildWidth="300px">
         {bikes &&
           bikes.map((bike) => (
-            <Card key={bike.id} bg="white" onClick={() => navigate(bike.id.toString())}>
+            <Card
+              key={bike.id}
+              bg="white"
+              onClick={() => navigate(bike.id.toString())}
+              className="clickable"
+            >
               <CardHeader pb="0">
                 <Heading as="h3" size="sm">
                   {bike.model} | {bike.name}
@@ -102,14 +108,6 @@ export default function Bikes() {
                     <Text noOfLines={6}>{bike.description}</Text>
                   </Box>
                 </Stack>
-
-                <Divider borderColor="gray.200"></Divider>
-
-                <CardFooter justify="space-around">
-                  <Button colorScheme="green" size="sm" leftIcon={<EditIcon />}>
-                    Edit
-                  </Button>
-                </CardFooter>
               </CardBody>
             </Card>
           ))}

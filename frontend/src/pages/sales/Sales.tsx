@@ -1,4 +1,4 @@
-import './styles.css';
+import '../styles.css';
 
 import { AddIcon, SearchIcon, TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons';
 import {
@@ -32,9 +32,9 @@ import {
 import { SetStateAction, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { API_URL } from '../../config';
-import { Sale } from '../models/sale';
-import useDebounce from '../utils';
+import { API_URL } from '../../../config';
+import { Sale } from '../../models/sale';
+import useDebounce from '../../utils';
 
 export default function Sales() {
   const { isOpen, onToggle, onClose } = useDisclosure();

@@ -11,9 +11,9 @@ import BikeDetails, { bikeDetailsLoader } from './pages/bikes/BikeDetails';
 import Bikes from './pages/bikes/Bikes';
 import EditBike, { editBikeAction } from './pages/bikes/EditBike';
 import Dashboard from './pages/Dashboard';
-import Sales from './pages/Sales';
 import CreateSale, { createSaleAction } from './pages/sales/CreateSale';
 import SaleDetails, { saleDetailsLoader } from './pages/sales/SaleDetails';
+import Sales from './pages/sales/Sales';
 
 // router and routes
 const router = createBrowserRouter(
