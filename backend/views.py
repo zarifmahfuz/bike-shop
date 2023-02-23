@@ -64,7 +64,16 @@ class CustomerView(APIView):
 
 class SalesView(APIView):
     def get(self, request):
-        serializer = serializers.SaleSerializer(Sale.objects.all(), many=True)
+        if "email" in request.query_params:
+            queryset = Sale.objects.with_customer_email(
+                email=request.query_params["email"]).all()
+        elif "bike" in request.query_params:
+            queryset = Sale.objects.with_bike(
+                bike=request.query_params["bike"]).all()
+        else:
+            queryset = Sale.objects.order_by("-sold_at").all()
+
+        serializer = serializers.SaleSerializer(queryset, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request):

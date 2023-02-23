@@ -42,3 +42,12 @@ class SaleManager(django_models.Manager):
                 sale=sale, bike=bike, units_sold=units_sold, price=bike.price)
             bike.save()
         return sale
+
+    def with_customer_email(self, email):
+        return self.get_queryset().filter(customer__email__contains=email).order_by("-sold_at")
+
+    def with_bike(self, bike):
+        queryset = self.get_queryset()
+        match_bike_name = queryset.filter(bikes__bike__name__contains=bike)
+        match_bike_model = queryset.filter(bikes__bike__model__contains=bike)
+        return match_bike_name.union(match_bike_model).order_by("-sold_at")
