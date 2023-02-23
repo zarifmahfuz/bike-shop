@@ -142,6 +142,21 @@ paths:
   /sales:
     get:
       summary: Get the list of sales
+      parameters:
+        - name: email
+          in: query
+          required: false
+          description: >
+            Provide this query parameter to filter sales by customer email
+          schema:
+            type: string
+        - name: bike
+          in: query
+          required: false
+          description: >
+            Provide this query parameter to filter sales by bike name/model
+          schema:
+            type: string
       responses:
         "200":
           description: OK
