@@ -75,3 +75,15 @@ class SaleSerializer(serializers.ModelSerializer):
         data["net_sale"] = round(instance.total_sale - decimal.Decimal(
             instance.discount_percentage / 100) * instance.total_sale, 2)
         return data
+
+
+class BikeAnalyticsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Bike
+        fields = "__all__"
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        output_data = {"bike": data, "sales": instance.total_sales,
+                       "percentage_total_sales": instance.sales_percentage}
+        return output_data

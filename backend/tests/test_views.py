@@ -252,3 +252,58 @@ class SalesTestCase(APITestCase):
         response = self.client.post(url, data=payload, format="json")
         sale = Sale.objects.get(pk=response.data["id"])
         return sale
+
+
+class AnalyticsTestCase(APITestCase):
+    def test_top_selling_bikes(self):
+        bike_1 = Bike.objects.create(
+            name="Trek Marlin", model="Trek Marlin 6", price=1100, units_available=2)
+        bike_2 = Bike.objects.create(
+            name="Giant Talon", model="Giant Talon 3", price=500, units_available=3)
+        bike_3 = Bike.objects.create(
+            name="Trek Verve", model="Trek Verve 2", price=400, units_available=2)
+        customer = Customer.objects.create(
+            first_name="Michael", last_name="Bisping", email="bisping@gmail.com")
+
+        self.create_sale(customer, bike_1)
+        self.create_sale(customer, bike_2)
+        self.create_sale(customer, bike_2)
+        self.create_sale(customer, bike_2)
+        self.create_sale(customer, bike_3)
+        self.create_sale(customer, bike_3)
+
+        response = self.client.get(
+            "/api/analytics/topSellingBikes/", format="json")
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(3, len(response.data))
+        self.assertEqual(bike_2.id, response.data[0]["bike"]["id"])
+        self.assertEqual(bike_1.id, response.data[1]["bike"]["id"])
+        self.assertEqual(bike_3.id, response.data[2]["bike"]["id"])
+
+        # expect rounded down percentages
+        self.assertEqual(1500, response.data[0]["sales"])
+        self.assertEqual(44, response.data[0]["percentage_total_sales"])
+        self.assertEqual(800, response.data[2]["sales"])
+        self.assertEqual(23, response.data[2]["percentage_total_sales"])
+
+    def create_sale(self, customer, bike, units_sold=1, discount_percentage=0):
+        payload = {
+            "bikes": [
+                {
+                    "id": bike.id,
+                    "unitsSold": units_sold
+                },
+            ],
+            "customer": {
+                "email": customer.email,
+                "firstName": customer.first_name,
+                "lastName": customer.last_name
+            },
+            "paymentMethod": "credit/debit",
+            "date": "2023-02-19",
+            "discountPercentage": discount_percentage
+        }
+        url = "/api/sales/"
+        response = self.client.post(url, data=payload, format="json")
+        sale = Sale.objects.get(pk=response.data["id"])
+        return sale

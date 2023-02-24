@@ -1,4 +1,5 @@
 from rest_framework.views import APIView
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import get_object_or_404
@@ -102,3 +103,20 @@ class SaleView(APIView):
         sale = get_object_or_404(Sale, pk=id)
         sale.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+@api_view()
+def top_selling_bikes(request):
+    queryset = Bike.objects.top_selling_bikes().all()
+    serializer = serializers.BikeAnalyticsSerializer(queryset, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+@api_view()
+def all_time_sales(request):
+    pass
+
+
+@api_view()
+def sales_trend(request):
+    pass

@@ -1,6 +1,7 @@
 from django.db import models as django_models
 from django.shortcuts import get_object_or_404
-import decimal
+from django.db.models import Sum, F, DecimalField
+from django.db.models.functions import Cast
 from . import models
 from .exceptions import NotEnoughBikeUnitsAvailable
 
@@ -11,6 +12,14 @@ class BikeManager(django_models.Manager):
         match_name = queryset.filter(name__contains=search_string)
         match_model = queryset.filter(model__contains=search_string)
         return match_name.union(match_model)
+
+    def top_selling_bikes(self, limit=10):
+        top_bikes = self.annotate(
+            total_sales=Sum(F('sales__units_sold') * F('sales__price'))).order_by('-total_sales')
+        total_sales_over_all_bikes = top_bikes.aggregate(Sum('total_sales'))
+        top_bikes = top_bikes.annotate(
+            sales_percentage=Cast(F('total_sales') * 100 / total_sales_over_all_bikes["total_sales__sum"], output_field=DecimalField()))
+        return top_bikes[:limit]
 
 
 class CustomerManager(django_models.Manager):
