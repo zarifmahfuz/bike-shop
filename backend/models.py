@@ -73,7 +73,8 @@ class Sale(models.Model):
 class BikeSale(models.Model):
     sale = models.ForeignKey(Sale, related_name="bikes",
                              on_delete=models.CASCADE)
-    bike = models.ForeignKey(Bike, on_delete=models.PROTECT)
+    bike = models.ForeignKey(Bike, related_name="sales",
+                             on_delete=models.PROTECT)
     units_sold = models.PositiveIntegerField(default=1)
     units_refunded = models.PositiveIntegerField(default=0, blank=True)
     price = models.DecimalField(
