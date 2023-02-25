@@ -9,7 +9,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { redirect, useLoaderData, useNavigate } from 'react-router-dom';
 
 import { API_URL } from '../../../config';
 import { Bike } from '../../models/bike';
@@ -57,7 +57,7 @@ export const bikeDetailsLoader = async ({ params }) => {
   const url = `${API_URL}/bikes/${id}/`;
   const res = await fetch(url);
   if (!res.ok) {
-    // TODO: Bike not found
+    return redirect('/error');
   }
   return res.json();
 };

@@ -5,6 +5,7 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
+import NotFound from './components/NotFound';
 import RootLayout from './layouts/RootLayout';
 import AddBike, { createBikeAction } from './pages/bikes/AddBike';
 import BikeDetails, { bikeDetailsLoader } from './pages/bikes/BikeDetails';
@@ -40,6 +41,8 @@ const router = createBrowserRouter(
         <Route path="new" element={<CreateSale />} action={createSaleAction} />
         <Route path=":id" element={<SaleDetails />} loader={saleDetailsLoader} />
       </Route>
+
+      <Route path="*" element={<NotFound />} />
     </Route>,
   ),
 );

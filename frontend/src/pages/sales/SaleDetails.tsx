@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Grid, GridItem, Heading, Spacer } from '@chakra-ui/react';
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import { redirect, useLoaderData, useNavigate } from 'react-router-dom';
 
 import { API_URL } from '../../../config';
 import { Sale } from '../../models/sale';
@@ -58,7 +58,7 @@ export const saleDetailsLoader = async ({ params }) => {
   const url = `${API_URL}/sales/${id}/`;
   const res = await fetch(url);
   if (!res.ok) {
-    // TODO: Sale not found
+    return redirect('/error');
   }
   return res.json();
 };
