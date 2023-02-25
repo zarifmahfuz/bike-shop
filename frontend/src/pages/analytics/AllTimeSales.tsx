@@ -5,11 +5,13 @@ import {
   Container,
   Flex,
   Heading,
+  Icon,
   SimpleGrid,
   Spinner,
   Text,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { SiSimpleanalytics } from 'react-icons/si';
 
 import { API_URL } from '../../../config';
 
@@ -40,7 +42,10 @@ export default function AllTimeSales() {
   return (
     <Card bg="gray.50" marginBottom="20px">
       <CardHeader>
-        <Heading size="md">All Time Sales</Heading>
+        <Flex align="center" gap={2}>
+          <Icon as={SiSimpleanalytics} />
+          <Heading size="md">All Time Sales</Heading>
+        </Flex>
       </CardHeader>
       <CardBody>
         {loading ? (

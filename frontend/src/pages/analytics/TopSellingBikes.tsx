@@ -1,9 +1,13 @@
+import '../styles.css';
+
 import {
   Card,
   CardBody,
   CardHeader,
   Container,
+  Flex,
   Heading,
+  Icon,
   Spinner,
   Table,
   TableCaption,
@@ -15,6 +19,8 @@ import {
   Tr,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { AiOutlineToTop } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
 import { API_URL } from '../../../config';
 import { Bike } from '../../models/bike';
@@ -29,6 +35,7 @@ export default function TopSellingBikes() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [topBikes, setTopBikes] = useState<BikeSaleData[]>();
+  const navigate = useNavigate();
   const fetchData = async () => {
     const res = await fetch(`${API_URL}/analytics/topSellingBikes/`);
     const data = await res.json();
@@ -45,7 +52,10 @@ export default function TopSellingBikes() {
   return (
     <Card bg="gray.50" maxWidth="700px">
       <CardHeader>
-        <Heading size="md">Top Selling Bikes</Heading>
+        <Flex align="center" gap={2}>
+          <Icon as={AiOutlineToTop} />
+          <Heading size="md">Top Selling Bikes</Heading>
+        </Flex>
       </CardHeader>
       <CardBody>
         {loading ? (
@@ -64,7 +74,11 @@ export default function TopSellingBikes() {
               </Thead>
               <Tbody>
                 {topBikes.map((bike, index) => (
-                  <Tr key={bike.bike.id}>
+                  <Tr
+                    key={bike.bike.id}
+                    className="clickable"
+                    onClick={() => navigate(`/bikes/${bike.bike.id}`)}
+                  >
                     <Td>{index + 1}</Td>
                     <Td>
                       {bike.bike.name} | {bike.bike.model}

@@ -3,10 +3,13 @@ import {
   CardBody,
   CardHeader,
   Container,
+  Flex,
   Heading,
+  Icon,
   Spinner,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { BsGraphUp } from 'react-icons/bs';
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 
 import { API_URL } from '../../../config';
@@ -65,7 +68,10 @@ export default function SalesTrend() {
   return (
     <Card bg="gray.50" marginBottom="20px">
       <CardHeader>
-        <Heading size="md">Sales Trend</Heading>
+        <Flex align="center" gap={2}>
+          <Icon as={BsGraphUp} />
+          <Heading size="md">Sales Trend</Heading>
+        </Flex>
       </CardHeader>
       <CardBody>
         {loading ? (
