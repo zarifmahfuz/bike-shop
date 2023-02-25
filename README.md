@@ -4,8 +4,8 @@
 1. [Project Requirements](https://github.com/zarifmahfuz/bike-shop/blob/main/docs/requirements.md)
 2. [REST API Specification](https://zarifmahfuz.github.io/bike-shop/)
 3. [Setup](https://github.com/zarifmahfuz/bike-shop/blob/main/README.md#setup)
-4. [Django Intro](https://github.com/zarifmahfuz/bike-shop/edit/main/README.md#django-intro)
-5. [More Features](https://github.com/zarifmahfuz/bike-shop/blob/main/README.md#potential-for-more-features)
+4. [Django Intro](https://github.com/zarifmahfuz/bike-shop#django-intro)
+5. [More Features](https://github.com/zarifmahfuz/bike-shop#potential-for-more-features)
 
 ## Technology Choices
 * I implemented the backend of this application using Django and the frontend using React. 
