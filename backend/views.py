@@ -138,3 +138,10 @@ def sales_trend(request):
             "sales": sales
         })
     return Response(data, status=status.HTTP_200_OK)
+
+
+@api_view()
+def bike_analytics(request, id):
+    bike = get_object_or_404(Bike, pk=id)
+    query_result = bike.sale_stats()
+    return Response(query_result, status=status.HTTP_200_OK)

@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.shortcuts import get_object_or_404
-import decimal
+from django.db.models import Sum, F
 from . import managers
 from .exceptions import RefundError
 
@@ -17,6 +17,15 @@ class Bike(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.model}"
+
+    def sale_stats(self):
+        query_result = self.sales.aggregate(total_sales=Sum(F('units_sold') * F('price')),
+                                            units_sold=Sum('units_sold'), units_refunded=Sum('units_refunded'))
+        if query_result["total_sales"] is None:
+            query_result["total_sales"] = 0
+            query_result["units_sold"] = 0
+            query_result["units_refunded"] = 0
+        return query_result
 
 
 class Customer(models.Model):
