@@ -3,12 +3,14 @@
 ## List of Contents
 1. [Project Requirements](https://github.com/zarifmahfuz/bike-shop/blob/main/docs/requirements.md)
 2. [REST API Specification](https://zarifmahfuz.github.io/bike-shop/)
-3. Setup
-4. Django Intro
-5. More Features
+3. [Setup](https://github.com/zarifmahfuz/bike-shop/blob/main/README.md#setup)
+4. [Django Intro](https://github.com/zarifmahfuz/bike-shop/edit/main/README.md#django-intro)
+5. [More Features](https://github.com/zarifmahfuz/bike-shop/blob/main/README.md#potential-for-more-features)
 
-## REST API
-I developed an OpenAPI specification before implementing the REST APIs for this application. The API specification can be viewed here: https://zarifmahfuz.github.io/bike-shop/.
+## Technology Choices
+* I implemented the backend of this application using Django and the frontend using React. 
+* I chose to keep the database as Sqlite3 for the sake of simplicity but the database is easily changeable to a more scalable database such as PostgreSQL. 
+* The frontend connects to the backend over REST APIs. I developed an OpenAPI specification for documenting the API design. The API specification can be viewed here: https://zarifmahfuz.github.io/bike-shop/.
 
 ## Setup
 ### System Requirements
