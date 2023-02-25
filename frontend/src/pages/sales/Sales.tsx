@@ -17,6 +17,7 @@ import {
   PopoverTrigger,
   Radio,
   RadioGroup,
+  Spinner,
   Stack,
   Table,
   TableCaption,
@@ -42,6 +43,7 @@ export default function Sales() {
   const [filterValue, setFilterValue] = useState('email');
   const [sales, setSales] = useState<Sale[]>([]);
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(true);
   const [searchInput, setSearchInput] = useState('');
 
   const fetchSales = async () => {
@@ -60,9 +62,10 @@ export default function Sales() {
     } else {
       setError(data);
     }
+    setLoading(false);
   };
 
-  useDebounce(fetchSales, [searchInput, filterValue], 300);
+  useDebounce(fetchSales, [searchInput, filterValue, loading], 300);
 
   const handleSearchInputChange = (input: {
     preventDefault: () => void;
@@ -129,7 +132,10 @@ export default function Sales() {
             </Tr>
           </Thead>
           <Tbody>
-            {sales &&
+            {loading ? (
+              <Spinner />
+            ) : (
+              sales &&
               sales.map((sale) => (
                 <Tr
                   key={sale.id}
@@ -163,7 +169,8 @@ export default function Sales() {
                     </UnorderedList>
                   </Td>
                 </Tr>
-              ))}
+              ))
+            )}
           </Tbody>
         </Table>
       </TableContainer>
