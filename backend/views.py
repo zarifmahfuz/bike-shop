@@ -119,10 +119,10 @@ def all_time_sales(request):
     bikes_sold = BikeSale.objects.total_bikes_sold()
     bikes_refunded = BikeSale.objects.total_bikes_refunded()
     data = {
-        "total_sales": total_sales,
-        "total_discount": total_discount,
-        "bikes_sold": bikes_sold,
-        "bikes_refunded": bikes_refunded
+        "total_sales": total_sales if total_sales else 0,
+        "total_discount": total_discount if total_sales else 0,
+        "bikes_sold": bikes_sold if bikes_sold else 0,
+        "bikes_refunded": bikes_refunded if bikes_refunded else 0
     }
     return Response(data, status=status.HTTP_200_OK)
 

@@ -84,6 +84,6 @@ class BikeAnalyticsSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         data = super().to_representation(instance)
-        output_data = {"bike": data, "sales": instance.total_sales,
-                       "percentage_total_sales": instance.sales_percentage}
+        output_data = {"bike": data, "sales": instance.total_sales if instance.total_sales else 0,
+                       "percentage_total_sales": instance.sales_percentage if instance.sales_percentage else 0}
         return output_data
