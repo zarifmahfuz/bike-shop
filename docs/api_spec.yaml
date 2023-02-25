@@ -85,6 +85,27 @@ paths:
                 $ref: "#/components/schemas/error"
         "404":
           description: Not Found
+  /bikes/{id}/analytics:
+    get:
+      summary: Retrieve sale analytics for an individual bike
+      parameters:
+      - $ref: "#/components/parameters/idParam"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalSales:
+                    type: number
+                  unitsSold:
+                    type: integer
+                  unitsRefunded:
+                    type: integer
+        "404":
+          description: Not Found
   /customers:
     get:
       summary: Get the list of customers
