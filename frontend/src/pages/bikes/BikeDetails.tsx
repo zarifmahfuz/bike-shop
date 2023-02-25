@@ -27,12 +27,7 @@ export default function BikeDetails() {
             </Text>
           </Box>
           <Spacer />
-          <Button
-            color="white"
-            bg="green.400"
-            leftIcon={<EditIcon />}
-            onClick={() => navigate('edit')}
-          >
+          <Button bg="#85C894" leftIcon={<EditIcon />} onClick={() => navigate('edit')}>
             Edit
           </Button>
         </Flex>
