@@ -6,7 +6,7 @@
         "name": "Trek Verve",
         "model": "Trek Verve 2",
         "price": "699.99",
-        "units_available": 3,
+        "units_available": 6,
         "description": "A versatile bike designed for comfort and ease of use. Ideal for casual rides and fitness.",
         "image": "https://trek.scene7.com/is/image/TrekBicycleProducts/Verve2Disc_21_32735_A_Portrait?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440"
     }
@@ -18,7 +18,7 @@
         "name": "Specialized Rockhopper",
         "model": "Expert 29",
         "price": "1400.00",
-        "units_available": 5,
+        "units_available": 4,
         "description": "A hardtail mountain bike built to conquer technical terrain with speed and confidence.",
         "image": "https://assets.specialized.com/i/specialized/91520-33_ROCKHOPPER-EXPERT-29-OAKGRNMET-METWHTSIL_HERO?bg=rgb(241,241,241)&w=2500&h=1406&fmt=auto"
     }
@@ -30,7 +30,7 @@
         "name": "Cannondale Synapse",
         "model": "Carbon Disc 105",
         "price": "2600.00",
-        "units_available": 4,
+        "units_available": 26,
         "description": "A high-performance road bike that offers a smooth and comfortable ride.",
         "image": "https://embed.widencdn.net/img/dorelrl/uqie9ib7os/1100px@1x/C21_C12501M_Synapse_105_BPL_PD.webp?color=f2eff7&q=99"
     }
@@ -42,7 +42,7 @@
         "name": "Trek Domane",
         "model": "Trek Domane AL 2",
         "price": "1019.99",
-        "units_available": 10,
+        "units_available": 7,
         "description": "A lightweight and responsive road bike designed for speed and performance.",
         "image": "https://trek.scene7.com/is/image/TrekBicycleProducts/DomaneAL2_21_33037_A_Portrait?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440"
     }
@@ -54,9 +54,2684 @@
         "name": "Giant Talon",
         "model": "Giant Talon 3",
         "price": "600.00",
-        "units_available": 10,
+        "units_available": 45,
         "description": "A budget-friendly mountain bike with a lightweight frame and front suspension for a smooth ride.",
         "image": "https://images2.giant-bicycles.com/b_white,e_trim,q_90,w_2000/r46bcbj9ogzm7g9qbod8/MY22Talon293_ColorBAmberGlow.jpg"
+    }
+},
+{
+    "model": "backend.customer",
+    "pk": 1,
+    "fields": {
+        "email": "example1@email.com",
+        "first_name": "Example",
+        "last_name": "1"
+    }
+},
+{
+    "model": "backend.customer",
+    "pk": 2,
+    "fields": {
+        "email": "example2@gmail.com",
+        "first_name": "Example",
+        "last_name": "2"
+    }
+},
+{
+    "model": "backend.customer",
+    "pk": 3,
+    "fields": {
+        "email": "example3@gmail.com",
+        "first_name": "Example",
+        "last_name": "3"
+    }
+},
+{
+    "model": "backend.customer",
+    "pk": 4,
+    "fields": {
+        "email": "example4@gmail.com",
+        "first_name": "Example",
+        "last_name": "4"
+    }
+},
+{
+    "model": "backend.customer",
+    "pk": 5,
+    "fields": {
+        "email": "example5@gmail.com",
+        "first_name": "Example",
+        "last_name": "5"
+    }
+},
+{
+    "model": "backend.customer",
+    "pk": 6,
+    "fields": {
+        "email": "mahfuz.zarif@gmail.com",
+        "first_name": "Zarif",
+        "last_name": "Mahfuz"
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 1,
+    "fields": {
+        "customer": 1,
+        "sold_at": "2022-03-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 5
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 2,
+    "fields": {
+        "customer": 2,
+        "sold_at": "2022-03-02",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "699.99",
+        "discount_percentage": 0
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 3,
+    "fields": {
+        "customer": 3,
+        "sold_at": "2022-03-24",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1019.99",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 4,
+    "fields": {
+        "customer": 4,
+        "sold_at": "2022-03-18",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 5,
+    "fields": {
+        "customer": 5,
+        "sold_at": "2022-04-13",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "3299.97",
+        "discount_percentage": 15
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 6,
+    "fields": {
+        "customer": 1,
+        "sold_at": "2022-04-23",
+        "updated_at": "2023-02-25",
+        "payment_method": "cash",
+        "total_sale": "4000.00",
+        "discount_percentage": 0
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 7,
+    "fields": {
+        "customer": 2,
+        "sold_at": "2022-04-26",
+        "updated_at": "2023-02-25",
+        "payment_method": "cash",
+        "total_sale": "3059.97",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 8,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-04-21",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 5
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 9,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "6999.90",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 10,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "6999.90",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 11,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "6999.90",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 12,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "6999.90",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 13,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "11200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 14,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "11200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 15,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "11200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 16,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 17,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 18,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 19,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "6119.94",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 20,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "6119.94",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 21,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "6119.94",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 22,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 23,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 24,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "9099.87",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 25,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "9099.87",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 26,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "14000.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 27,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "11200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 28,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "14000.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 29,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 30,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 31,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "6119.94",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 32,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 33,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "5099.95",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 34,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 35,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 36,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "9099.87",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 37,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "5099.95",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 38,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "12599.82",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 39,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "14000.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 40,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 41,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "21000.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 42,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 43,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "12599.82",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 44,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "5099.95",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 45,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "15600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 46,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-05-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 47,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 48,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "21000.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 49,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "14000.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 50,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10199.90",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 51,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "15600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 52,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "15600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 53,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 54,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 55,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10199.90",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 56,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10199.90",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 57,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 58,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "12600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 59,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "5099.95",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 60,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "15600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 61,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 62,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-06-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 63,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10199.90",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 64,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "15600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 65,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1800.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 66,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10199.90",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 67,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "15600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 68,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "15600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 69,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1800.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 70,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10199.90",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 71,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10199.90",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 72,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-07-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 73,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-09-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 74,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1800.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 75,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-09-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "4079.96",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 76,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-09-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 77,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "15600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 78,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-09-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 79,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-09-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 80,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-08-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1800.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 81,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-09-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 82,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-10-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "5200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 83,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-09-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 84,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-09-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "10400.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 85,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-10-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "5200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 86,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-10-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "5200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 87,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-10-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 88,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-10-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 89,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-09-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 90,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-11-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 91,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-10-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 92,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-11-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2039.98",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 93,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-11-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 95,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-11-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 97,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-10-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "5200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 100,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-10-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 103,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-12-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 104,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-11-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 105,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-12-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 106,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-12-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 107,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-01-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "699.99",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 108,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-01-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2800.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 109,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-01-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "2800.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 117,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-01-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 119,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2022-12-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 120,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-02-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "0.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 121,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-01-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 122,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-01-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 128,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-02-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 129,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-01-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "1200.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 132,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-02-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 135,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-02-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.sale",
+    "pk": 137,
+    "fields": {
+        "customer": 6,
+        "sold_at": "2023-02-15",
+        "updated_at": "2023-02-25",
+        "payment_method": "credit/debit",
+        "total_sale": "600.00",
+        "discount_percentage": 10
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 1,
+    "fields": {
+        "sale": 1,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 2,
+    "fields": {
+        "sale": 2,
+        "bike": 1,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 3,
+    "fields": {
+        "sale": 3,
+        "bike": 4,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 4,
+    "fields": {
+        "sale": 4,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 5,
+    "fields": {
+        "sale": 5,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 6,
+    "fields": {
+        "sale": 5,
+        "bike": 1,
+        "units_sold": 3,
+        "units_refunded": 0,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 7,
+    "fields": {
+        "sale": 6,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 8,
+    "fields": {
+        "sale": 6,
+        "bike": 2,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 9,
+    "fields": {
+        "sale": 7,
+        "bike": 4,
+        "units_sold": 3,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 10,
+    "fields": {
+        "sale": 8,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 11,
+    "fields": {
+        "sale": 9,
+        "bike": 1,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 12,
+    "fields": {
+        "sale": 10,
+        "bike": 1,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 13,
+    "fields": {
+        "sale": 11,
+        "bike": 1,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 14,
+    "fields": {
+        "sale": 13,
+        "bike": 2,
+        "units_sold": 8,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 15,
+    "fields": {
+        "sale": 12,
+        "bike": 1,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 16,
+    "fields": {
+        "sale": 14,
+        "bike": 2,
+        "units_sold": 8,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 17,
+    "fields": {
+        "sale": 15,
+        "bike": 2,
+        "units_sold": 8,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 18,
+    "fields": {
+        "sale": 16,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 19,
+    "fields": {
+        "sale": 17,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 20,
+    "fields": {
+        "sale": 18,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 21,
+    "fields": {
+        "sale": 20,
+        "bike": 4,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 22,
+    "fields": {
+        "sale": 19,
+        "bike": 4,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 23,
+    "fields": {
+        "sale": 21,
+        "bike": 4,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 24,
+    "fields": {
+        "sale": 22,
+        "bike": 5,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 25,
+    "fields": {
+        "sale": 23,
+        "bike": 5,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 26,
+    "fields": {
+        "sale": 24,
+        "bike": 1,
+        "units_sold": 13,
+        "units_refunded": 0,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 27,
+    "fields": {
+        "sale": 25,
+        "bike": 1,
+        "units_sold": 13,
+        "units_refunded": 0,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 28,
+    "fields": {
+        "sale": 26,
+        "bike": 2,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 29,
+    "fields": {
+        "sale": 27,
+        "bike": 2,
+        "units_sold": 8,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 30,
+    "fields": {
+        "sale": 28,
+        "bike": 2,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 31,
+    "fields": {
+        "sale": 29,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 32,
+    "fields": {
+        "sale": 30,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 33,
+    "fields": {
+        "sale": 31,
+        "bike": 4,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 34,
+    "fields": {
+        "sale": 33,
+        "bike": 4,
+        "units_sold": 5,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 35,
+    "fields": {
+        "sale": 34,
+        "bike": 5,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 36,
+    "fields": {
+        "sale": 32,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 37,
+    "fields": {
+        "sale": 35,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 38,
+    "fields": {
+        "sale": 36,
+        "bike": 1,
+        "units_sold": 13,
+        "units_refunded": 0,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 39,
+    "fields": {
+        "sale": 37,
+        "bike": 4,
+        "units_sold": 5,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 40,
+    "fields": {
+        "sale": 38,
+        "bike": 1,
+        "units_sold": 18,
+        "units_refunded": 0,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 41,
+    "fields": {
+        "sale": 39,
+        "bike": 2,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 42,
+    "fields": {
+        "sale": 40,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 43,
+    "fields": {
+        "sale": 41,
+        "bike": 2,
+        "units_sold": 15,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 44,
+    "fields": {
+        "sale": 42,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 45,
+    "fields": {
+        "sale": 43,
+        "bike": 1,
+        "units_sold": 18,
+        "units_refunded": 0,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 46,
+    "fields": {
+        "sale": 44,
+        "bike": 4,
+        "units_sold": 5,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 47,
+    "fields": {
+        "sale": 45,
+        "bike": 3,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 48,
+    "fields": {
+        "sale": 46,
+        "bike": 5,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 49,
+    "fields": {
+        "sale": 47,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 50,
+    "fields": {
+        "sale": 48,
+        "bike": 2,
+        "units_sold": 15,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 51,
+    "fields": {
+        "sale": 49,
+        "bike": 2,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 52,
+    "fields": {
+        "sale": 50,
+        "bike": 4,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 53,
+    "fields": {
+        "sale": 51,
+        "bike": 3,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 54,
+    "fields": {
+        "sale": 52,
+        "bike": 3,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 55,
+    "fields": {
+        "sale": 53,
+        "bike": 5,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 56,
+    "fields": {
+        "sale": 54,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 57,
+    "fields": {
+        "sale": 55,
+        "bike": 4,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 58,
+    "fields": {
+        "sale": 56,
+        "bike": 4,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 59,
+    "fields": {
+        "sale": 58,
+        "bike": 2,
+        "units_sold": 9,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 60,
+    "fields": {
+        "sale": 57,
+        "bike": 5,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 61,
+    "fields": {
+        "sale": 59,
+        "bike": 4,
+        "units_sold": 5,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 62,
+    "fields": {
+        "sale": 60,
+        "bike": 3,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 63,
+    "fields": {
+        "sale": 61,
+        "bike": 5,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 64,
+    "fields": {
+        "sale": 62,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 65,
+    "fields": {
+        "sale": 63,
+        "bike": 4,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 66,
+    "fields": {
+        "sale": 64,
+        "bike": 3,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 67,
+    "fields": {
+        "sale": 65,
+        "bike": 5,
+        "units_sold": 3,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 68,
+    "fields": {
+        "sale": 66,
+        "bike": 4,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 69,
+    "fields": {
+        "sale": 67,
+        "bike": 3,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 70,
+    "fields": {
+        "sale": 68,
+        "bike": 3,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 71,
+    "fields": {
+        "sale": 69,
+        "bike": 5,
+        "units_sold": 3,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 72,
+    "fields": {
+        "sale": 70,
+        "bike": 4,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 73,
+    "fields": {
+        "sale": 71,
+        "bike": 4,
+        "units_sold": 10,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 74,
+    "fields": {
+        "sale": 72,
+        "bike": 5,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 75,
+    "fields": {
+        "sale": 73,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 76,
+    "fields": {
+        "sale": 74,
+        "bike": 5,
+        "units_sold": 3,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 77,
+    "fields": {
+        "sale": 75,
+        "bike": 4,
+        "units_sold": 7,
+        "units_refunded": 3,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 78,
+    "fields": {
+        "sale": 76,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 79,
+    "fields": {
+        "sale": 77,
+        "bike": 3,
+        "units_sold": 6,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 80,
+    "fields": {
+        "sale": 78,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 81,
+    "fields": {
+        "sale": 79,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 82,
+    "fields": {
+        "sale": 80,
+        "bike": 5,
+        "units_sold": 3,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 83,
+    "fields": {
+        "sale": 81,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 84,
+    "fields": {
+        "sale": 83,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 85,
+    "fields": {
+        "sale": 82,
+        "bike": 3,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 86,
+    "fields": {
+        "sale": 84,
+        "bike": 3,
+        "units_sold": 4,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 87,
+    "fields": {
+        "sale": 85,
+        "bike": 3,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 88,
+    "fields": {
+        "sale": 86,
+        "bike": 3,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 89,
+    "fields": {
+        "sale": 87,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 90,
+    "fields": {
+        "sale": 88,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 91,
+    "fields": {
+        "sale": 89,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 92,
+    "fields": {
+        "sale": 90,
+        "bike": 3,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 93,
+    "fields": {
+        "sale": 91,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 94,
+    "fields": {
+        "sale": 92,
+        "bike": 4,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "1019.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 95,
+    "fields": {
+        "sale": 93,
+        "bike": 3,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 97,
+    "fields": {
+        "sale": 95,
+        "bike": 3,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 99,
+    "fields": {
+        "sale": 97,
+        "bike": 3,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 102,
+    "fields": {
+        "sale": 100,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 104,
+    "fields": {
+        "sale": 103,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 106,
+    "fields": {
+        "sale": 105,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 107,
+    "fields": {
+        "sale": 104,
+        "bike": 3,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "2600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 108,
+    "fields": {
+        "sale": 106,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 109,
+    "fields": {
+        "sale": 107,
+        "bike": 1,
+        "units_sold": 2,
+        "units_refunded": 1,
+        "price": "699.99"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 110,
+    "fields": {
+        "sale": 108,
+        "bike": 2,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 111,
+    "fields": {
+        "sale": 109,
+        "bike": 2,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 119,
+    "fields": {
+        "sale": 117,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 120,
+    "fields": {
+        "sale": 119,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 122,
+    "fields": {
+        "sale": 120,
+        "bike": 2,
+        "units_sold": 1,
+        "units_refunded": 1,
+        "price": "1400.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 123,
+    "fields": {
+        "sale": 121,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 124,
+    "fields": {
+        "sale": 122,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 130,
+    "fields": {
+        "sale": 128,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 131,
+    "fields": {
+        "sale": 129,
+        "bike": 5,
+        "units_sold": 2,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 134,
+    "fields": {
+        "sale": 132,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 137,
+    "fields": {
+        "sale": 135,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
+    }
+},
+{
+    "model": "backend.bikesale",
+    "pk": 139,
+    "fields": {
+        "sale": 137,
+        "bike": 5,
+        "units_sold": 1,
+        "units_refunded": 0,
+        "price": "600.00"
     }
 }
 ]
