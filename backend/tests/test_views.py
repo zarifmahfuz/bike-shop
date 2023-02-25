@@ -1,6 +1,7 @@
 from rest_framework.test import APITestCase
 from rest_framework import status
 from ..models import Bike, Customer, Sale
+from freezegun import freeze_time
 
 
 class SalesTestCase(APITestCase):
@@ -286,7 +287,116 @@ class AnalyticsTestCase(APITestCase):
         self.assertEqual(800, response.data[2]["sales"])
         self.assertEqual(23, response.data[2]["percentage_total_sales"])
 
-    def create_sale(self, customer, bike, units_sold=1, discount_percentage=0):
+    def test_all_time_sales(self):
+        bike_1 = Bike.objects.create(
+            name="Trek Marlin", model="Trek Marlin 6", price=1100, units_available=2)
+        bike_2 = Bike.objects.create(
+            name="Giant Talon", model="Giant Talon 3", price=500, units_available=3)
+        customer = Customer.objects.create(
+            first_name="Michael", last_name="Bisping", email="bisping@gmail.com")
+        self.create_sale(customer, bike_1, units_sold=2,
+                         discount_percentage=10)
+        sale_2 = self.create_sale(customer, bike_2, units_sold=3)
+
+        # issue some refunds
+        payload = {
+            "refund": [
+                {
+                    "id": bike_2.id,
+                    "unitsRefunded": 2
+                }
+            ]
+        }
+        url = f"/api/sales/{sale_2.id}/"
+        response = self.client.patch(url, data=payload, format="json")
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+
+        response = self.client.get(
+            "/api/analytics/allTimeSales/", format="json")
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+        self.assertEqual(2700, response.data["total_sales"])
+        self.assertEqual(220, response.data["total_discount"])
+        self.assertEqual(5, response.data["bikes_sold"])
+        self.assertEqual(2, response.data["bikes_refunded"])
+
+    @freeze_time("2023-02-24")
+    def test_sales_trend(self):
+        bike_1 = Bike.objects.create(
+            name="Trek Marlin", model="Trek Marlin 6", price=1100, units_available=100)
+        customer = Customer.objects.create(
+            first_name="Michael", last_name="Bisping", email="bisping@gmail.com")
+        sale_dates = ["2022-02-14", "2022-02-24", "2022-03-05", "2022-03-17", "2022-04-04", "2022-04-15", "2022-04-19",
+                      "2022-05-04", "2022-05-06", "2022-05-20", "2022-05-29"]
+        for date in sale_dates:
+            self.create_sale(customer, bike_1, date=date)
+
+        response = self.client.get("/api/analytics/salesTrend/", format="json")
+        self.assertEqual(status.HTTP_200_OK, response.status_code)
+        expected_data = [
+            {
+                "year": 2023,
+                "month": 2,
+                "sales": 0
+            },
+            {
+                "year": 2023,
+                "month": 1,
+                "sales": 0
+            },
+            {
+                "year": 2022,
+                "month": 12,
+                "sales": 0
+            },
+            {
+                "year": 2022,
+                "month": 11,
+                "sales": 0
+            },
+            {
+                "year": 2022,
+                "month": 10,
+                "sales": 0
+            },
+            {
+                "year": 2022,
+                "month": 9,
+                "sales": 0
+            },
+            {
+                "year": 2022,
+                "month": 8,
+                "sales": 0
+            },
+            {
+                "year": 2022,
+                "month": 7,
+                "sales": 0
+            },
+            {
+                "year": 2022,
+                "month": 6,
+                "sales": 0
+            },
+            {
+                "year": 2022,
+                "month": 5,
+                "sales": 4400
+            },
+            {
+                "year": 2022,
+                "month": 4,
+                "sales": 3300
+            },
+            {
+                "year": 2022,
+                "month": 3,
+                "sales": 2200
+            }
+        ]
+        self.assertEqual(expected_data, response.data)
+
+    def create_sale(self, customer, bike, units_sold=1, discount_percentage=0, date="2023-02-19"):
         payload = {
             "bikes": [
                 {
@@ -300,7 +410,7 @@ class AnalyticsTestCase(APITestCase):
                 "lastName": customer.last_name
             },
             "paymentMethod": "credit/debit",
-            "date": "2023-02-19",
+            "date": date,
             "discountPercentage": discount_percentage
         }
         url = "/api/sales/"

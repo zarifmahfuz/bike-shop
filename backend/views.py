@@ -4,7 +4,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import get_object_or_404
 from . import serializers
-from .models import Bike, Customer, Sale
+from .models import Bike, Customer, Sale, BikeSale
 
 
 class BikesView(APIView):
@@ -114,9 +114,27 @@ def top_selling_bikes(request):
 
 @api_view()
 def all_time_sales(request):
-    pass
+    total_sales = Sale.objects.total_sales()
+    total_discount = Sale.objects.total_discount()
+    bikes_sold = BikeSale.objects.total_bikes_sold()
+    bikes_refunded = BikeSale.objects.total_bikes_refunded()
+    data = {
+        "total_sales": total_sales,
+        "total_discount": total_discount,
+        "bikes_sold": bikes_sold,
+        "bikes_refunded": bikes_refunded
+    }
+    return Response(data, status=status.HTTP_200_OK)
 
 
 @api_view()
 def sales_trend(request):
-    pass
+    monthly_sales = Sale.objects.monthly_sales()
+    data = []
+    for year, month, sales in monthly_sales:
+        data.append({
+            "year": year,
+            "month": month,
+            "sales": sales
+        })
+    return Response(data, status=status.HTTP_200_OK)

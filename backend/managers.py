@@ -1,9 +1,11 @@
 from django.db import models as django_models
 from django.shortcuts import get_object_or_404
 from django.db.models import Sum, F, DecimalField
-from django.db.models.functions import Cast
+from django.db.models.functions import Cast, ExtractYear, ExtractMonth
+from django.utils.timezone import now, timedelta
 from . import models
 from .exceptions import NotEnoughBikeUnitsAvailable
+from .utils import get_years_months
 
 
 class BikeManager(django_models.Manager):
@@ -60,3 +62,41 @@ class SaleManager(django_models.Manager):
         match_bike_name = queryset.filter(bikes__bike__name__contains=bike)
         match_bike_model = queryset.filter(bikes__bike__model__contains=bike)
         return match_bike_name.union(match_bike_model).order_by("-sold_at")
+
+    def total_discount(self):
+        queryset = self.annotate(discount=Cast(
+            F('total_sale') * F('discount_percentage') / 100.0, output_field=DecimalField()))
+        return queryset.aggregate(Sum('discount'))['discount__sum']
+
+    def total_sales(self):
+        return self.aggregate(Sum('total_sale'))['total_sale__sum']
+
+    # Returns a list of (year, month, sales) for the last 12 months
+    def monthly_sales(self):
+        today = now().date()
+        last_12_months = get_years_months(today, 12)
+
+        one_year_ago = today - timedelta(days=365)
+        sales_by_month = self.filter(
+            sold_at__gte=one_year_ago,
+            sold_at__lte=today
+        ).annotate(
+            year=ExtractYear('sold_at'),
+            month=ExtractMonth('sold_at')
+        )
+
+        monthly_sales = sales_by_month.values('year', 'month').annotate(
+            total_sales=Sum('total_sale')
+        ).order_by('year', 'month')
+
+        sales_by_month = [(y, m, next(
+            (s['total_sales'] for s in monthly_sales if (s['year']) == y and s['month'] == m), 0)) for (y, m) in last_12_months]
+        return sales_by_month
+
+
+class BikeSaleManager(django_models.Manager):
+    def total_bikes_sold(self):
+        return self.aggregate(Sum('units_sold'))['units_sold__sum']
+
+    def total_bikes_refunded(self):
+        return self.aggregate(Sum('units_refunded'))['units_refunded__sum']

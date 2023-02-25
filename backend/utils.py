@@ -27,3 +27,19 @@ def custom_exception_handler(exc, context):
         response.data = custom_data
 
     return response
+
+
+# Returns [(year, month)]
+def get_years_months(current_date, num_months):
+    current_month = current_date.month
+    current_year = current_date.year
+
+    result = []
+    for i in range(num_months):
+        if current_month == 0:
+            current_month = 12
+            current_year -= 1
+        result.append((current_year, current_month))
+        current_month -= 1
+
+    return result

@@ -79,3 +79,4 @@ class BikeSale(models.Model):
     units_refunded = models.PositiveIntegerField(default=0, blank=True)
     price = models.DecimalField(
         "Price at which the bike was sold at", max_digits=7, decimal_places=2)
+    objects = managers.BikeSaleManager()
