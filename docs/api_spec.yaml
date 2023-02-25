@@ -281,20 +281,7 @@ paths:
           description: Not Found
   /analytics/topSellingBikes:
     get:
-      summary: Retrieve the list of top selling bikes in a specified time range
-      parameters:
-        - name: timeRange
-          in: query
-          description: Time range dating back from the current date
-          required: true
-          schema:
-            type: string
-            enum: 
-              - 7d
-              - 30d
-              - 3m
-              - 6m
-              - 1y
+      summary: Retrieve the list of top selling bikes
       responses:
         "200":
           description: OK
@@ -303,21 +290,60 @@ paths:
               schema:
                 type: object
                 properties:
-                  totalBikesSold:
-                    type: integer
-                    description: >
-                      Total number of bikes sold in the given time range
                   bikes:
                     type: array
                     items:
                       type: object
+                      description: Ordered from most selling to least selling
                       properties:
                         bike:
                           $ref: "#/components/schemas/bike"
-                        unitsSold:
-                          type: integer
-                        totalSales:
+                        sales:
                           type: number
+                        percentageTotalSales:
+                          type: number
+  /analytics/allTimeSales:
+    get:
+      summary: Retrieve details about all times sales
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalSales:
+                    type: number
+                  totalDiscount:
+                    type: number
+                  bikesSold:
+                    type: integer
+                  bikesRefunded:
+                    type: integer
+  /analytics/salesTrend:
+    get:
+      summary: Retreive the month over month sales
+      description: Retrieves the month over month sales over the last 12 months
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                description: Ordered by the current month first
+                items:
+                  type: object
+                  properties:
+                    year:
+                      type: integer
+                    month:
+                      type: integer
+                      description: Range is [1, 12] where 1 is January and 12 is December
+                    sales:
+                      type: number
+                  
 
 components:
   schemas:
