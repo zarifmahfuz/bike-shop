@@ -49,5 +49,6 @@ If you are unfamiliar with Django, the following is meant to give you a very hig
 This is a MVP of the app that I built in a few days! There are so many more things that I would wish to implement over time. Some of them are listed below!
 1. Implement pagination for the Sales and Bikes pages
 2. Implement user management, authorization and authentication
-3. Add database indexes to make the app more performant
-4. Etc.
+3. Implement caching at the frontend
+4. Add database indexes to make the app more performant
+5. Etc.
