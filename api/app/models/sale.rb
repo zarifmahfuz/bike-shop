@@ -5,4 +5,6 @@ class Sale < ApplicationRecord
         less_than_or_equal_to: 100, message: "is not in valid range" }
 
     belongs_to :customer
+    has_many :bike_sales
+    has_many :bikes, through: :bike_sales
 end

@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_21_201900) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_21_214259) do
+  create_table "bike_sales", force: :cascade do |t|
+    t.integer "units_sold", default: 1, null: false
+    t.integer "units_refunded", default: 0, null: false
+    t.decimal "price", precision: 7, scale: 2, null: false
+    t.integer "bike_id", null: false
+    t.integer "sale_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bike_id"], name: "index_bike_sales_on_bike_id"
+    t.index ["sale_id"], name: "index_bike_sales_on_sale_id"
+  end
+
   create_table "bikes", force: :cascade do |t|
     t.string "name", null: false
     t.string "model", null: false
@@ -41,5 +53,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_21_201900) do
     t.index ["customer_id"], name: "index_sales_on_customer_id"
   end
 
+  add_foreign_key "bike_sales", "bikes"
+  add_foreign_key "bike_sales", "sales"
   add_foreign_key "sales", "customers", on_delete: :restrict
 end
