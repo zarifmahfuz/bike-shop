@@ -1,17 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  model: MyString
-  price: 9.99
-  units_available: 1
-  description: MyText
-  image: MyText
+  id: 1
+  name: Trek Verve
+  model: Trek Verve 2
+  price: 699.99
+  units_available: 2
+  description: A versatile bike designed for comfort and ease of use. Ideal for casual rides and fitness.
+  image: https://trek.scene7.com/is/image/TrekBicycleProducts/Verve2Disc_21_32735_A_Portrait?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440
 
 two:
-  name: MyString
-  model: MyString
-  price: 9.99
-  units_available: 1
-  description: MyText
-  image: MyText
+  id: 2
+  name: Giant Talon
+  model: Giant Talon 3
+  price: 600.00
+  units_available: 2
+  description: A budget-friendly mountain bike with a lightweight frame and front suspension for a smooth ride.
+  image: https://images2.giant-bicycles.com/b_white,e_trim,q_90,w_2000/r46bcbj9ogzm7g9qbod8/MY22Talon293_ColorBAmberGlow.jpg
